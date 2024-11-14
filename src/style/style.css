@@ -1,0 +1,34 @@
+body {
+    background-color: #1b1c1c;
+    color: white;
+}
+
+
+form {
+    margin: 1em;
+}
+
+input {
+    color: white;
+    background-color: slategray;
+    margin-bottom: 1em;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button {
+    color: white;
+    background-color: slategray;
+}
+
+button:hover {
+    background-color: darkslategray;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.required {
+    color: red
+}
