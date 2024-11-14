@@ -44,8 +44,6 @@ $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$p
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
-    header("Location: http://localhost/phpDatabaseExercise/src/profile.php");
-    die();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
