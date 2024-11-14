@@ -43,7 +43,8 @@ $password = htmlspecialchars($_POST["password"]);
 $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    echo "New record created successfully. Redirecting to login in 5 seconds.";
+    header("refresh:5;url=login.html");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
