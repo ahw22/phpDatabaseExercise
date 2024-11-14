@@ -35,3 +35,11 @@ input::placeholder {
 .required {
     color: red
 }
+
+.box {
+    justify-self: center;
+    background-color: #3a3a3a;
+    border: 1px, black;
+    border-radius: 1em;
+    padding: 1em;
+}

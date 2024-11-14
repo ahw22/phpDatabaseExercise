@@ -11,18 +11,20 @@
 </head>
 
 <body>
-  <h2>Register new User:</h2>
-  <span class="required">* = required field</span>
-  <form action="register.php" method="POST">
-    <label for="uName">Username: <span class="required">*</span></label><br>
-    <input type="text" name="uName" id="uName" placeholder="Username" required><br>
-    <label for="password">Password: <span class="required">*</span></label><br>
-    <input type="password" name="password" id="password" placeholder="*******" required><br>
-    <label for="email">E-mail adress: <span class="required">*</span></label><br>
-    <input type="email" name="email" id="email" placeholder="example@example.com" required><br>
-    <button type="submit">Register</button>
-  </form>
-  <p>Alread registered? Then click <a href="login.html">here</a> to login</p>
+  <div class="box">
+    <h2>Register new User:</h2>
+    <span class="required">* = required field</span>
+    <form action="register.php" method="POST">
+      <label for="uName">Username: <span class="required">*</span></label><br>
+      <input type="text" name="uName" id="uName" placeholder="Username" required><br>
+      <label for="password">Password: <span class="required">*</span></label><br>
+      <input type="password" name="password" id="password" placeholder="*******" required><br>
+      <label for="email">E-mail adress: <span class="required">*</span></label><br>
+      <input type="email" name="email" id="email" placeholder="example@example.com" required><br>
+      <button type="submit">Register</button>
+    </form>
+    <p>Alread registered? Then click <a href="login.html">here</a> to login</p>
+  </div>
 </body>
 
 </html>
