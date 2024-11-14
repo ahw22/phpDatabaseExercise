@@ -20,7 +20,8 @@ if (mysqli_num_rows($result) == 1) {
     echo "Login Sucessful. Welcome " . $row["name"] . ".<br>";
     echo "name " . $row["name"] . " - Password: " . $row["password"] . "<br>";
 } else {
-    echo "Login failed, user not found.";
+    echo "Login failed, user not found. Returning to register page.";
+    header("refresh:5;url=index.php");
 }
 
 ?>
