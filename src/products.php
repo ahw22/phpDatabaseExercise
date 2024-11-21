@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $serverName = "localhost";
 $username = "root";
 $dbName = "users";
@@ -35,7 +35,10 @@ $result = mysqli_query($conn, $sql);
             <th>Manufacturer</th>
             <th>Category</th>
             <th>Price</th>
-            <th>Action</th>
+            <?php
+            if ($_SESSION["role"] == "admin") {
+                echo "<th>Action</th>";
+            } ?>
         </tr>
         <?php
         if (mysqli_num_rows($result) > 0) {
@@ -44,13 +47,21 @@ $result = mysqli_query($conn, $sql);
                 foreach ($row as $column) {
                     echo "<td>" . $column . "</td>";
                 }
-                echo "<td><a href='edit.php?pid=" . $row['id'] . "'>Edit</a> <a href='delete.php?pid=" . $row['id'] . "'>Delete</a></td></tr>";
+                //add edit and delete buttons if admin
+                if ($_SESSION["role"] == "admin") {
+                    echo "<td><a href='edit.php?pid=" . $row['id'] . "'>Edit</a> <a href='delete.php?pid=" . $row['id'] . "'>Delete</a></td>";
+                }
+                echo "</tr>";
             } 
 
         }
         ?>
     </table> <br>
-    <a href="add.php"><button>Add Product</button></a>
+    <?php
+    //add add product button if role is admin
+    if ($_SESSION["role"] == "admin") {
+        echo "<a href='add.php'><button>Add Product</button></a>";
+    }?>
 </div>
 </body>
 

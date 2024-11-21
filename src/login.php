@@ -13,12 +13,14 @@ if (!$conn) {
 $name = htmlspecialchars($_POST["uName"]);
 $password = htmlspecialchars($_POST["password"]);
 
-$sql = "SELECT name, password FROM users WHERE name = '$name' AND password = '$password'";
+$sql = "SELECT name, password, role FROM users WHERE name = '$name' AND password = '$password'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     echo "Login Sucessful. Welcome " . $row["name"] . ".<br>";
-    echo "name " . $row["name"] . " - Password: " . $row["password"] . "<br>";
+    session_start();
+    $_SESSION["role"] = $row["role"];
+    header("refresh:5;url=products.php");
 } else {
     echo "Login failed, user not found. Returning to register page.";
     header("refresh:5;url=index.php");
