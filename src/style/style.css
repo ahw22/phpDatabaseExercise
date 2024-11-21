@@ -5,6 +5,11 @@ body {
 
 a {
     text-decoration: none;
+    color: mediumaquamarine;
+}
+
+a:visited {
+    color: mediumaquamarine;
 }
 
 form {

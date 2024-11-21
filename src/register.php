@@ -5,7 +5,7 @@ $username = "root";
 $dbName = "users";
 
 //create db connection
-$conn = mysqli_connect('localhost', 'root', '', 'users');
+$conn = mysqli_connect('localhost', 'root', '', 'shop');
 //check connection
 if (!$conn) {
     die("Connection failed: ");
@@ -44,7 +44,7 @@ $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$p
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully. Redirecting to login in 5 seconds.";
-    header("refresh:5;url=login.html");
+    header("refresh:5;url=signIn.html");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

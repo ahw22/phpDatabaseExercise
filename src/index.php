@@ -23,7 +23,7 @@
       <input type="email" name="email" id="email" placeholder="example@example.com" required><br>
       <button type="submit">Register</button>
     </form>
-    <p>Alread registered? Then click <a href="login.html">here</a> to login</p>
+    <p>Alread registered? Then click <a href="signIn.html">here</a> to login</p>
   </div>
 </body>
 

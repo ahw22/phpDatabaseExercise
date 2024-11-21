@@ -4,7 +4,7 @@ $serverName = "localhost";
 $username = "root";
 $dbName = "users";
 
-$conn = mysqli_connect('localhost', 'root', '', 'users');
+$conn = mysqli_connect('localhost', 'root', '', 'shop');
 
 if (!$conn) {
     die("Connection failed: ");
