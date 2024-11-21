@@ -19,18 +19,19 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>User Page</title>
+    <title>Products Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <h1>Our Products</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
+    <div class="box">
+        <h1>Our Products</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
             <th>Manufacturer</th>
             <th>Category</th>
             <th>Price</th>
@@ -39,7 +40,7 @@ $result = mysqli_query($conn, $sql);
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
+                echo "<tr class='hover'>";
                 foreach ($row as $column) {
                     echo "<td>" . $column . "</td>";
                 }
@@ -49,6 +50,7 @@ $result = mysqli_query($conn, $sql);
         }
         ?>
     </table>
+</div>
 </body>
 
 </html>

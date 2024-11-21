@@ -48,3 +48,13 @@ input::placeholder {
     border-radius: 1em;
     padding: 1em;
 }
+
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.hover:hover {
+    background-color: gray;
+}
