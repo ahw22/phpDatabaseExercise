@@ -44,7 +44,7 @@ $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$p
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully. Redirecting to login in 5 seconds.";
-    header("refresh:5;url=signIn.html");
+    header("refresh:5;url=signIn.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

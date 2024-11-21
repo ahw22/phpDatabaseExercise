@@ -44,12 +44,13 @@ $result = mysqli_query($conn, $sql);
                 foreach ($row as $column) {
                     echo "<td>" . $column . "</td>";
                 }
-                echo "<td><a href='edit.php?pid=" . $row['id'] . "'>Edit</a></td></tr>";
+                echo "<td><a href='edit.php?pid=" . $row['id'] . "'>Edit</a> <a href='delete.php?pid=" . $row['id'] . "'>Delete</a></td></tr>";
             } 
 
         }
         ?>
-    </table>
+    </table> <br>
+    <a href="add.php"><button>Add Product</button></a>
 </div>
 </body>
 

@@ -12,6 +12,10 @@ a:visited {
     color: mediumaquamarine;
 }
 
+a:hover {
+    color: aqua
+}
+
 form {
     margin: 1em;
 }
