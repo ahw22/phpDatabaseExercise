@@ -20,21 +20,24 @@ form {
     margin: 1em;
 }
 
+button {
+    color: white;
+    background-color: slategray;
+    overflow: hidden;
+    perspective: 1px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: darkslategray;
+}
+
 input {
     color: white;
     background-color: slategray;
     margin-bottom: 1em;
     padding: 5px;
     border-radius: 5px;
-}
-
-button {
-    color: white;
-    background-color: slategray;
-}
-
-button:hover {
-    background-color: darkslategray;
 }
 
 input::placeholder {
@@ -57,6 +60,10 @@ table, th, td{
     border: 1px solid white;
     border-collapse: collapse;
     padding: 5px;
+}
+
+table {
+    border-radius: 5px;
 }
 
 .hover:hover {

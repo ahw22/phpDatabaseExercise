@@ -32,37 +32,36 @@ $result = mysqli_query($conn, $sql);
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-            <th>Manufacturer</th>
-            <th>Category</th>
-            <th>Price</th>
-            <?php
-            if ($_SESSION["role"] == "admin") {
-                echo "<th>Action</th>";
-            } ?>
-        </tr>
-        <?php
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr class='hover'>";
-                foreach ($row as $column) {
-                    echo "<td>" . $column . "</td>";
-                }
-                //add edit and delete buttons if admin
+                <th>Manufacturer</th>
+                <th>Category</th>
+                <th>Price</th>
+                <?php
                 if ($_SESSION["role"] == "admin") {
-                    echo "<td><a href='edit.php?pid=" . $row['id'] . "'>Edit</a> <a href='delete.php?pid=" . $row['id'] . "'>Delete</a></td>";
+                    echo "<th>Action</th>";
+                } ?>
+            </tr>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                while ($entry = mysqli_fetch_assoc($result)) {
+                    echo "<tr class='hover'>";
+                    foreach ($entry as $column) {
+                        echo "<td><a href='product.php?pid=" . $entry['id'] . "'>" . $column . "</a></td>";
+                    }
+                    //add edit and delete buttons if admin
+                    if ($_SESSION["role"] == "admin") {
+                        echo "<td><a href='edit.php?pid=" . $entry['id'] . "'><button>Edit</button></a> <a href='delete.php?pid=" . $entry['id'] . "'><button>Delete</button></a></td>";
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
-            } 
-
-        }
-        ?>
-    </table> <br>
-    <?php
-    //add add product button if role is admin
-    if ($_SESSION["role"] == "admin") {
-        echo "<a href='add.php'><button>Add Product</button></a>";
-    }?>
-</div>
+            }
+            ?>
+        </table> <br>
+        <?php
+        //add add product button if role is admin
+        if ($_SESSION["role"] == "admin") {
+            echo "<a href='add.php'><button>Add Product</button></a>";
+        } ?>
+    </div>
 </body>
 
 </html>

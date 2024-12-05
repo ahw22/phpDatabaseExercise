@@ -16,10 +16,10 @@ $password = htmlspecialchars($_POST["password"]);
 $sql = "SELECT name, password, role FROM users WHERE name = '$name' AND password = '$password'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_assoc($result);
-    echo "Login Sucessful. Welcome " . $row["name"] . ".<br>";
+    $entry = mysqli_fetch_assoc($result);
+    echo "Login Sucessful. Welcome " . $entry["name"] . ".<br>";
     session_start();
-    $_SESSION["role"] = $row["role"];
+    $_SESSION["role"] = $entry["role"];
     header("refresh:5;url=products.php");
 } else {
     echo "Login failed, user not found. Returning to register page.";
